@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'phone_verify',
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,17 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+PHONE_VERIFICATION = {
+        'BACKEND': 'phone_verify.backends.twilio.TwilioBackend',
+        'TWILIO_SANDBOX_TOKEN':'123456',
+        'OPTIONS': {
+            'SID': 'fake',
+            'SECRET': 'fake',
+            'FROM': '+14755292729'
+        },
+        'TOKEN_LENGTH': 6,
+        'MESSAGE': 'Welcome to {app}! Please use security code {otp} to proceed.',
+        'APP_NAME': 'Phone Verify',
+        'OTP_EXPIRATION_TIME': 3600  # In seconds only
+}

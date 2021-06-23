@@ -36,10 +36,10 @@ if(dateString !="")
 
 
 </script>
-<p align=center>Name : <input type='text' name='name' placeholder='enter your name'</p><br>
-<p align=center>Email : <input type='email' name='email' placeholder='enter your email'</p><br>
+<p align=center>Name : <input type='text' name='name' placeholder='enter your name' required pattern="[a-zA-Z\s]+"></p><br>
+<p align=center>Email : <input type='email' name='email' placeholder='enter your email' required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"></p><br>
 <p align=center>Date of Birth : <input type="date" id="date" placeholder="enter your dob" name="dob" value="1987/08/31" onblur="getAge()"></p><br>
-<p align=center>Phone no. : <input type='tel' name='phone' placeholder='enter your phone no.'</p><br><br>
+<p align=center>Phone no. : <input type='tel' name='phone' placeholder='enter your phone no.' pattern="[789][0-9]{9}"></p><br><br>
 <p align=center><input type='submit' value='Submit'></p>
 
 </form>
